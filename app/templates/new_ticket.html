@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>IT Support Ticket System</h1>
+        <p>Internal IT Support Portal</p>
+    </header>
+
+    <main>
+        <section class="tickets">
+
+            <div class="section-header">
+                <h2>Create New Ticket</h2>
+                <a href="/" class="button-secondary">Back to Dashboard</a>
+            </div>
+
+            <form method="POST" action="/new-ticket">
+
+                <label for="title">Ticket Title</label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Example: Laptop cannot connect to Wi-Fi"
+                    required
+                >
+
+                <label for="description">Description</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="6"
+                    placeholder="Describe the problem..."
+                    required
+                ></textarea>
+
+                <label for="priority">Priority</label>
+
+                <select id="priority" name="priority" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
+
+                <button type="submit">Create Ticket</button>
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>IT Support Ticket System | Portfolio Project</p>
+    </footer>
+
+</body>
+</html>
